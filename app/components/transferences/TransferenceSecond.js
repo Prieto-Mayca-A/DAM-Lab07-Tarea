@@ -10,20 +10,20 @@ export default function TransferenceSecond(props) {
     return (
         <View style={styles.container}>
             <Text>Cuenta origen</Text>
-                <TextInput value={params.object.origen} editable={false} style={styles.input}/>
+                <TextInput value={params.object.Cuentaorigen} style={styles.input}/>
             <Text>Cuenta destino</Text>
-                <TextInput value={params.object.destino} editable={false} style={styles.input}/>
+                <TextInput value={params.object.Cuentadestino} style={styles.input}/>
             <Text>Importe</Text>
-                <TextInput value={params.object.importe} editable={false} style={styles.input}/>
+                <TextInput value={params.object.importe} style={styles.input}/>
             <Text>Referencia</Text>
-                <TextInput value={params.object.referencia} editable={false} style={styles.input}/>
+                <TextInput value={params.object.referencia} style={styles.input}/>
             <Text>Fecha</Text>
-                <TextInput value={params.object.fecha} editable={false} style={styles.input}/>
+                <TextInput value={params.object.fecha} style={styles.input}/>
             <Text>Notificarme al mail</Text>
-                <TextInput value={notificar} editable={false} style={styles.input}/>
+                <TextInput value={notificar}style={styles.input}/>
             <View style={styles.buttons}>
                 <TouchableOpacity style={styles.buttonVolver} onPress={()=>params.navigator.navigate('First')}>
-                    <Text style={{color:'black'}}>VOLVER</Text>
+                    <Text style={{color:'white'}}>VOLVER</Text>
                 </TouchableOpacity>
                 <View style={{width:30}}/>
                 <TouchableOpacity style={styles.ButtonSiguiente} onPress={()=>params.navigator.navigate('Third',{navigator:params.navigator})}>
@@ -39,7 +39,7 @@ const styles = {
         margin: 30,
     },
     input: {
-        backgroundColor: '#858a964d',
+        backgroundColor: '#ADA5A5',
         height: 40,
     },
     buttons: {
@@ -48,7 +48,7 @@ const styles = {
         flexDirection: 'row',
     },
     buttonVolver: {
-        backgroundColor:'gray',
+        backgroundColor:'purple',
         fontSize:20,
         width:100,
         height: 30,
@@ -57,7 +57,7 @@ const styles = {
         borderRadius: 7,
     },
     ButtonSiguiente: {
-        backgroundColor:'blue',
+        backgroundColor:'purple',
         fontSize:20,
         width:130,
         height: 30,

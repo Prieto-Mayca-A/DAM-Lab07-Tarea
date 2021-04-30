@@ -51,11 +51,6 @@ export default function App() {
   }
 
   return (
-    /*
-    <NavigationContainer>
-      <TransferenceStackScreen/>
-    </NavigationContainer>
-    */
     <NavigationContainer>
     <Tab.Navigator
       initialRouteName="Transference"
@@ -68,7 +63,7 @@ export default function App() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({color,size}) => (
-            <MaterialComunityIcons name="home" color='#d73a74' size={size}/>
+            <MaterialComunityIcons name="home" color='#000000' size={size}/>
           ),
         }}
       />
@@ -78,7 +73,7 @@ export default function App() {
         options={{
           tabBarLabel: 'Transference',
           tabBarIcon: ({color,size}) => (
-            <MaterialComunityIcons name="home" color='#d73a74' size={size}/>
+            <MaterialComunityIcons name="home" color='#000000' size={size}/>
           ),
         }}
       />
@@ -88,7 +83,7 @@ export default function App() {
         options={{
           tabBarLabel: 'Details',
           tabBarIcon: ({color,size}) => (
-            <MaterialComunityIcons name="bell" color='#d73a74' size={size}/>
+            <MaterialComunityIcons name="bell" color='#000000' size={size}/>
           ),
         }}
       />
@@ -99,8 +94,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex: 10,
+    backgroundColor: '#ff00ff00',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -7,10 +7,12 @@ import ModalSelector from 'react-native-modal-selector';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const data = [
-    { key: 1, section: true, label: 'Cuentas' },
-    { key: 2, label: '0000026597832' },
-    { key: 3, label: '0000095641321' },
-    { key: 4, label: '0000025487951' },
+    { key: 1, section: true, label: 'Cuentas Prueba' },
+    { key: 2, label: '942039090' },
+    { key: 3, label: '959019908' },
+    { key: 4, label: '982313123' },
+    { key: 5, label: '932489234' },
+    { key: 6, label: '982324234' },
 ];
 
 export default class TransferenceFirst extends Component {
@@ -29,26 +31,24 @@ export default class TransferenceFirst extends Component {
     }
 
     render() {
-        //Métodos para el Datetime Picker
         const showDatePicker = () => this.setState({isDatePickerVisible: true});
         const hideDatePicker = () => this.setState({isDatePickerVisible: false});
         const handleConfirm = (date) => {this.setState({fecha: moment(date).format("YYYY/MM/DD")}); hideDatePicker()};
-        //Método para el Switch
         const toggleSwitch = () => this.setState({isEnabled: !this.state.isEnabled});
 
         const validate = () => {
             const data = {
                 object:this.state,
                 navigator:this.props.navigation}
-            if(this.state.origen==''||this.state.destino==''||this.state.referencia==''||this.state.fecha==''){
-                alert('No se han llenado todos los campos');
+            if(this.state.Cuentaorigen=='' || this.state.Cuentadestino=='' || this.state.referencia=='' || this.state.fecha==''){
+                alert('Le falta campos x completar!!');
                 return;
             }
             if(parseInt(this.state.importe)>=0){
                 this.props.navigation.navigate('Second',data);
                 return;
             }
-            alert('El importe debe ser un número y positivo');
+            alert('El importe no es correcto!!');
         };
 
         return (
@@ -56,18 +56,19 @@ export default class TransferenceFirst extends Component {
                 <Text>Cuenta origen</Text>
                 <ModalSelector
                     data={data}
-                    initValue="Seleccciona una cuenta"
+                    initValue="Ingrese una cuenta"
                     style={styles.input} 
-                    onChange={(option)=>this.setState({origen:option.label})}/>
+                    onChange={(option)=>this.setState({Cuentaorigen:option.label})}/>
                 <Text>Cuenta destino</Text>
                 <ModalSelector
                     data={data}
-                    initValue="Seleccciona una cuenta" 
+                    initValue="Ingrese una cuenta" 
                     style={styles.input}
-                    onChange={(option)=>this.setState({destino:option.label})}/>
+                    onChange={(option)=>this.setState({Cuentadestino:option.label})}/>
                 <Text>Importe</Text>
                     <TextInput 
-                        style={styles.input} 
+                        style={styles.input}
+                        placeholder='Ingrese su importe en soles >:) no le robaremos' 
                         onChangeText={(text)=>this.setState({importe:text})}/>
                 <Text>Referencia</Text>
                     <TextInput style={styles.input} onChangeText={(text)=>this.setState({referencia:text})}/>
@@ -83,18 +84,17 @@ export default class TransferenceFirst extends Component {
                     onCancel={hideDatePicker}
                 />
                 <View style={styles.switch}>
-                    <Text>Notificarme al mail</Text>    
+                    <Text>Notificarme al email?</Text>    
                     <Switch
-                        trackColor={{ false: "#767577", true: "#81b0ff" }}
-                        thumbColor={this.state.isEnabled ? "#f5dd4b" : "#f4f3f4"}
-                        ios_backgroundColor="#3e3e3e"
+                        trackColor={{ false: "#B7C0B6", true: "#B7C0B6" }}
+                        thumbColor={this.state.isEnabled ? "#17FF00" : "#FF0000"}
                         onValueChange={toggleSwitch}
                         value={this.state.isEnabled}
                     />
                 </View>
                 <View style={{ alignItems: 'center'}}>
-                    <View style={{width:120,}}>
-                        <Button title="Siguiente" onPress={validate} />
+                    <View style={{width:200}}>
+                        <Button color='purple' title="Siguiente" onPress={validate} />
                     </View>
                 </View>
             </View>
@@ -107,7 +107,7 @@ const styles = {
         margin: 30,
     },
     input: {
-        backgroundColor: '#858a964d',
+        backgroundColor: '#ADA5A5',
         height: 40,
     },
     switch: {
@@ -121,6 +121,6 @@ const styles = {
         width: 110,
         height: 30,
         fontSize: 20,
-        backgroundColor: '#858a964d',
+        backgroundColor: '#ADA5A5',
     }
 }
