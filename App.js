@@ -3,13 +3,9 @@ import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { theme } from './src/core/theme'
-import Home from './src/screens/Home'
-import vistaDetalles from './src/screens/vistaDetalle'
 import {
   StartScreen,
   LoginScreen,
-  RegisterScreen,
-  ResetPasswordScreen,
   Dashboard,
 } from './src/screens'
 
@@ -28,14 +24,7 @@ export default function App() {
         >
           <Stack.Screen name="StartScreen" component={StartScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
-          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
-          <Stack.Screen
-            name="ResetPasswordScreen"
-            component={ResetPasswordScreen}
-          />
-          <Stack.Screen name="Lista" component={Home} />
-          <Stack.Screen name="Detalles" component={vistaDetalles} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
