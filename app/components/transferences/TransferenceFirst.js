@@ -8,11 +8,16 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const data = [
     { key: 1, section: true, label: 'Cuentas Prueba' },
-    { key: 2, label: '942039090' },
-    { key: 3, label: '959019908' },
-    { key: 4, label: '982313123' },
-    { key: 5, label: '932489234' },
-    { key: 6, label: '982324234' },
+    { key: 2, label: '194-1967786-1-34' },
+    { key: 3, label: '193-1853946-0-25' },
+    { key: 4, label: '0011-0426-0100005979' },
+    { key: 5, label: '0011-0426-0100005960' },
+    { key: 6, label: '00-046-021886' },
+    { key: 7, label: '002-194-001967786134-96' },
+    { key: 8, label: ' 002-193-001853946025-15' },
+    { key: 9, label: '011-426-000100005979-48' },
+    { key: 10, label: '011-426-000100005960-48' },
+    { key: 11, label: '195-4567786-1-79' },
 ];
 
 export default class TransferenceFirst extends Component {
